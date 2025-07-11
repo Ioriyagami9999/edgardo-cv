@@ -49,7 +49,7 @@ export function TerminalTypewriter({ name, speed = 120, delay = 1000 }: Terminal
   }
 
   // Agregar la experiencia
-  const experienceText = " - 2 años en experiencia"
+  const experienceText = " - 3 años en experiencia"
   for (let i = 0; i < experienceText.length; i++) {
     steps.push({
       text: `echo "Desarrollador: ${name}${experienceText.substring(0, i + 1)}`,
