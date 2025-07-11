@@ -215,7 +215,7 @@ export default function Portfolio() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://wa.me/526144644561"
+                href="https://api.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
@@ -237,7 +237,7 @@ export default function Portfolio() {
               <div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4 text-green-600" />
-                  <span className="font-medium">614-464-4561</span>
+                  <span className="font-medium">614-382-7505</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4 text-orange-600" />
