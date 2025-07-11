@@ -215,11 +215,11 @@ export default function Portfolio() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://api.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0"
+                href="https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                title="WhatsApp: 614-464-4561"
+                title="WhatsApp: 614-382-7505"
               >
                 <MessageCircle className="w-6 h-6" />
               </a>
@@ -754,7 +754,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               className="bg-green-600 hover:bg-green-700"
-              onClick={() => window.open("https://wa.me/526144644561", "_blank")}
+              onClick={() => window.open("https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0", "_blank")}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
@@ -777,7 +777,7 @@ export default function Portfolio() {
           <div className="text-gray-400 text-sm">
             <p className="flex items-center justify-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>614-464-4561</span>
+              <span>614-382-7505</span>
             </p>
           </div>
         </div>
@@ -813,7 +813,7 @@ export default function Portfolio() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://wa.me/526144644561"
+                  href="https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-green-400 transition-colors duration-300"
@@ -881,7 +881,7 @@ export default function Portfolio() {
                 </p>
                 <p className="text-gray-400 flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  614-464-4561
+                  614-382-7505
                 </p>
                 <p className="text-gray-400 flex items-center">
                   <Globe className="w-4 h-4 mr-2" />
@@ -895,7 +895,7 @@ export default function Portfolio() {
                 </Button>
                 <Button
                   className="bg-green-600 hover:bg-green-700 w-full"
-                  onClick={() => window.open("https://wa.me/526144644561", "_blank")}
+                  onClick={() => window.open("https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0", "_blank")}
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp
