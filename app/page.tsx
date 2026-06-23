@@ -6,14 +6,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { TerminalTypewriter } from "@/components/terminal-typewriter"
 import { EasterEggModal } from "@/components/easter-egg-modal"
-import { usePdfGenerator } from "@/hooks/use-pdf-generator"
 import {
   Code2,
   Database,
   Cloud,
   Server,
   Globe,
-  Download,
   Mail,
   Github,
   Linkedin,
@@ -23,7 +21,6 @@ import {
   Monitor,
   ExternalLink,
   Camera,
-  Printer,
   MessageCircle,
   Phone,
   Calendar,
@@ -33,8 +30,6 @@ import {
 export default function Portfolio() {
   const [showEasterEgg, setShowEasterEgg] = useState(false)
   const [clickCount, setClickCount] = useState(0)
-  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false)
-  const { generatePDF } = usePdfGenerator()
 
   const handleAvatarClick = () => {
     const newClickCount = clickCount + 1
@@ -44,20 +39,6 @@ export default function Portfolio() {
     if (newClickCount >= 5) {
       setShowEasterEgg(true)
       setClickCount(0) // Reset counter
-    }
-  }
-
-  const handleDownloadCV = async () => {
-    setIsGeneratingPDF(true)
-    try {
-      await generatePDF()
-    } catch (error) {
-      console.error("Error al generar PDF:", error)
-    } finally {
-      // Restaurar estado después de un delay para dar tiempo a la impresión
-      setTimeout(() => {
-        setIsGeneratingPDF(false)
-      }, 2000)
     }
   }
 
@@ -130,14 +111,6 @@ export default function Portfolio() {
               <Mail className="w-4 h-4 mr-2" />
               Contacto
             </Button>
-            <Button size="sm" onClick={handleDownloadCV} disabled={isGeneratingPDF}>
-              {isGeneratingPDF ? (
-                <Printer className="w-4 h-4 mr-2 animate-pulse" />
-              ) : (
-                <Download className="w-4 h-4 mr-2" />
-              )}
-              {isGeneratingPDF ? "Preparando..." : "Descargar CV"}
-            </Button>
           </div>
         </div>
       </header>
@@ -184,14 +157,6 @@ export default function Portfolio() {
                   Ver Proyectos
                 </a>
               </Button>
-              <Button variant="outline" size="lg" onClick={handleDownloadCV} disabled={isGeneratingPDF}>
-                {isGeneratingPDF ? (
-                  <Printer className="w-5 h-5 mr-2 animate-pulse" />
-                ) : (
-                  <Download className="w-5 h-5 mr-2" />
-                )}
-                {isGeneratingPDF ? "Preparando..." : "Descargar CV"}
-              </Button>
             </div>
 
             {/* Redes Sociales */}
@@ -215,11 +180,11 @@ export default function Portfolio() {
                 <Github className="w-6 h-6" />
               </a>
               <a
-                href="https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0"
+                href="https://web.whatsapp.com/send/?phone=526141304205&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                title="WhatsApp: 614-382-7505"
+                title="WhatsApp: 614-130-4205"
               >
                 <MessageCircle className="w-6 h-6" />
               </a>
@@ -237,7 +202,7 @@ export default function Portfolio() {
               <div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4 text-green-600" />
-                  <span className="font-medium">614-382-7505</span>
+                  <span className="font-medium">614-130-4205</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4 text-orange-600" />
@@ -754,30 +719,16 @@ export default function Portfolio() {
             <Button
               size="lg"
               className="bg-green-600 hover:bg-green-700"
-              onClick={() => window.open("https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0", "_blank")}
+              onClick={() => window.open("https://web.whatsapp.com/send/?phone=526141304205&text&type=phone_number&app_absent=0", "_blank")}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-gray-600 text-white hover:bg-gray-800"
-              onClick={handleDownloadCV}
-              disabled={isGeneratingPDF}
-            >
-              {isGeneratingPDF ? (
-                <Printer className="w-5 h-5 mr-2 animate-pulse" />
-              ) : (
-                <Download className="w-5 h-5 mr-2" />
-              )}
-              {isGeneratingPDF ? "Preparando..." : "Descargar CV"}
             </Button>
           </div>
           <div className="text-gray-400 text-sm">
             <p className="flex items-center justify-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>614-382-7505</span>
+              <span>614-130-4205</span>
             </p>
           </div>
         </div>
@@ -813,7 +764,7 @@ export default function Portfolio() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0"
+                  href="https://web.whatsapp.com/send/?phone=526141304205&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-green-400 transition-colors duration-300"
@@ -855,19 +806,6 @@ export default function Portfolio() {
                     Contacto
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleDownloadCV()
-                    }}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center"
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Descargar CV
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -881,7 +819,7 @@ export default function Portfolio() {
                 </p>
                 <p className="text-gray-400 flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  614-382-7505
+                  614-130-4205
                 </p>
                 <p className="text-gray-400 flex items-center">
                   <Globe className="w-4 h-4 mr-2" />
@@ -895,7 +833,7 @@ export default function Portfolio() {
                 </Button>
                 <Button
                   className="bg-green-600 hover:bg-green-700 w-full"
-                  onClick={() => window.open("https://web.whatsapp.com/send/?phone=526143827505&text&type=phone_number&app_absent=0", "_blank")}
+                  onClick={() => window.open("https://web.whatsapp.com/send/?phone=526141304205&text&type=phone_number&app_absent=0", "_blank")}
                 >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   WhatsApp
